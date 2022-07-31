@@ -1,0 +1,50 @@
+#include<stdio.h>
+int main()
+{
+int RN,N;
+printf("enter your roman number:\n");
+scanf("%d",&RN);
+  for(N=1000;N<=RN;N+=1000)
+    printf("M");
+  if(RN%1000>=900)
+    printf("CM");
+  if(RN%1000>=500&&RN%1000<900)
+    printf("D");
+  if(RN%1000<900&&RN%1000>500)
+    for(N=600;N<=RN%1000;N+=100)
+      printf("C");
+  if(RN%1000>=400&&RN%1000<500)
+    printf("CD");
+  if(RN%1000<400)
+    for(N=100;N<=RN%1000;N+=100)
+    printf("C");
+
+
+  if(RN%100>=90)
+    printf("XC");
+  if(RN%100>=50&&RN%100<90)
+    printf("L");
+  if(RN%100<90&&RN%100>50)
+    for(N=60;N<=RN%100;N+=10)
+      printf("X");
+  if(RN%100>=40&&RN%100<50)
+    printf("XL");
+  if(RN%100<40)
+    for(N=10;N<=RN%100;N+=10)
+    printf("X");
+
+  if(RN%10>=9)
+    printf("IX");
+  if(RN%10>=5&&RN%10<9)
+    printf("V");
+  if(RN%10<9&&RN%10>5)
+    for(N=6;N<=RN%10;N+=1)
+      printf("I");
+  if(RN%10>=4&&RN%10<5)
+    printf("IV");
+  if(RN%10<4)
+    for(N=1;N<=RN%10;N+=1)
+    printf("I");
+
+return 0;
+}
